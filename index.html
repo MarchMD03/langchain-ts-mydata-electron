@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>チャットボット</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+    body {
+      background-color: #ffffff;
+      font-family: sans-serif;
+      font-size: 16px;
+    }
+    .container {
+      width: 100%;
+      margin: 20px auto;
+    }
+    .chat-box {
+      border: 1px solid #ccc;
+      padding: 20px;
+    }
+    .chat-message {
+      margin-bottom: 10px;
+    }
+    .chat-message.me {
+      background-color: #ccc;
+      color: #ffffff;
+    }
+    .chat-message.you {
+      background-color: #ffffff;
+      color: #333333;
+    }
+    .category-buttons {
+      margin-top: 10px;
+    }
+    .category-buttons button {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>チャットボット</h1>
+    <div class="chat-box">
+      <ul class="list-group" id="list-group">
+        <li class="list-group-item chat-message me">
+          <strong>あなた：</strong> こんにちは！
+        </li>
+        <li class="list-group-item chat-message you">
+          <strong>チャットボット：</strong> こんにちは！
+        </li>
+      </ul>
+    </div>
+    <form action="/chat" onsubmit="return false;">
+      <div class="form-group" id="form-group">
+        <div class="category-buttons" id="category-buttons">
+          <input type="text" class="form-control" name="question" id="question" placeholder="質問を入力してください">
+          <button type="button" class="btn btn-primary" id="exeAnswer">送信</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <script src="./chat.js"></script>
+</body>
+</html>
